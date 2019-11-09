@@ -40,7 +40,7 @@ export default class Settings extends React.Component {
    importWallet(){
      this.deleteWallet()
      //import new wallet
-     return fetch('http://66.70.225.142:3001/privatekey/qbc/' + this.state.privateKey)
+     return fetch('https://blockbook-qbc.service-crypto.com/privatekey/qbc/' + this.state.privateKey)
      .then((response) => response.json())
      .then((responseJson) => {
        SecureStore.setItemAsync('address', responseJson.address)
