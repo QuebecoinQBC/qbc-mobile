@@ -40,11 +40,11 @@ export default class Home extends React.Component {
       }
    }
    openTx(txid){
-     Linking.openURL('http://155.138.220.104:11889/tx/' + txid)
+     Linking.openURL('http://66.70.225.142:11889/tx/' + txid)
    }
    async sendReceive(txid){
      var address = await SecureStore.getItemAsync('address')
-     return fetch('http://155.138.220.104:11889/api/v1/tx/' + txid)
+     return fetch('http://66.70.225.142:11889/api/v1/tx/' + txid)
      .then((response) => response.json())
      .then((responseJson) => {
        if (responseJson.vin[0].addresses[0] == address){
@@ -66,7 +66,7 @@ export default class Home extends React.Component {
      var address = await SecureStore.getItemAsync('address')
      if (address !== null){
        this.setState({address: address})
-       return fetch('http://155.138.220.104:11889/api/v1/address/' + address)
+       return fetch('http://66.70.225.142:11889/api/v1/address/' + address)
        .then((response) => response.json())
        .then((responseJson) => {
            this.setState({balance: (JSON.parse(responseJson.balance)).toFixed(4)})

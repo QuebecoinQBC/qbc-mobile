@@ -43,7 +43,7 @@ export default class Send extends React.Component {
      var privKey = await SecureStore.getItemAsync('privateKey')
      var sendJson = {send: this.state.address, from: address, privKey: privKey, amount: this.state.amount, balance: this.state.balance}
      console.log(JSON.stringify(sendJson))
-     return fetch('http://54.39.201.117:3001/send/qbc/' + JSON.stringify(sendJson))
+     return fetch('http://66.70.225.142:3001/send/qbc/' + JSON.stringify(sendJson))
      .then((response) => response.json())
      .then((responseJson) => {
        console.log(responseJson)
@@ -90,7 +90,7 @@ export default class Send extends React.Component {
   async balance(){
     var address = await SecureStore.getItemAsync('address')
     if (address !== null){
-      return fetch('http://155.138.220.104:11889/api/v1/address/' + address)
+      return fetch('http://66.70.225.142:11889/api/v1/address/' + address)
       .then((response) => response.json())
       .then((responseJson) => {
         if (typeof responseJson.balance !== 'undefined'){

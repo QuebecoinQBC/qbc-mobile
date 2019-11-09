@@ -49,7 +49,7 @@ export default class Receive extends React.Component {
    }
    requestKeyPair = async () => {
      var data = "somedata" + this.state.username + "moredata" + this.state.password;
-     return fetch('http://54.39.201.117:3001/keyPair/qbc/' + data)
+     return fetch('http://66.70.225.142:3001/keyPair/qbc/' + data)
     .then((response) => response.json())
     .then((responseJson) => {
       console.log(responseJson.address)
